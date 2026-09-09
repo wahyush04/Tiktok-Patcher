@@ -1,0 +1,48 @@
+# ==============================================================================
+# Git Ignore - Ignore Semua File Video & File Sementara
+# ==============================================================================
+
+# Source Code (Disembunyikan dari Git / Publik)
+modify_video.py
+
+# File Video (Semua ekstensi video)
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+*.flv
+*.m4v
+*.wmv
+*.3gp
+*.ts
+
+# Folder Input dan Output (Kecualikan .gitkeep agar struktur folder tetap ada)
+input/*
+!input/.gitkeep
+output/*
+!output/.gitkeep
+
+# File Temporary & Scratch
+*.tmp
+*.tmp.mp4
+*.temp
+scratch/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Build & Executable Artifacts
+build/
+dist/
+*.spec
+*.exe
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
