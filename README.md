@@ -6,6 +6,14 @@ Program ini bekerja secara instan tanpa me-render ulang video sehingga kualitas 
 
 ---
 
+## ⬇️ Download Rilis Terbaru
+
+Unduh aplikasi versi standalone siap pakai (tanpa perlu instalasi Python atau software tambahan apa pun):
+
+👉 **[Download Tiktok Patcher v1.0.0 (Windows Standalone)](https://github.com/wahyush04/Tiktok-Patcher/releases/tag/v1.0.0)**
+
+---
+
 ## 🌟 Fitur Utama
 
 - ⚡ **Super Cepat & Lossless (Zero Quality Loss)**: Menggunakan teknik *stream copy* langsung tanpa render ulang piksel (*no re-encoding*). Video berdurasi 1 menit beresolusi 1080p atau 4K selesai dalam waktu **0,1 – 0,3 detik**.
@@ -14,18 +22,19 @@ Program ini bekerja secara instan tanpa me-render ulang video sehingga kualitas 
 - 🧹 **Pembersihan Jejak Editor Total**: Menghapus metadata editor (Adobe Premiere Pro XMP, CapCut traces, timecode, dan riwayat file proyek asli).
 - 📂 **Manajemen Folder Dinamis**: Cukup masukkan video ke folder `input/`, dan file hasil modifikasi otomatis tersimpan rapi di folder `output/`.
 - 🎛️ **Menu Interaktif & Batch Mode**: Tampilan antarmuka terminal yang ramah pengguna, mendukung pemilihan video satuan maupun pemrosesan massal semua video sekaligus.
+- 🚀 **Portable & Siap Pakai**: Berupa file executable tunggal (`TiktokPatcher.exe`), langsung berjalan di Windows tanpa perlu instalasi dependency atau setting environment.
 
 ---
 
 ## 📁 Struktur Direktori
 
+Setelah mengekstrak file rilis ZIP, struktur folder adalah sebagai berikut:
+
 ```text
-tiktok-video-modifier/
+TiktokPatcher/
 ├── input/                  <--- Tempatkan file video sumber (.mp4, .mov, dll.) di sini
 ├── output/                 <--- Hasil video termodifikasi otomatis tersimpan di sini
-├── TiktokPatcher.exe       <--- Aplikasi siap pakai (Windows Standalone, tanpa perlu instal Python)
-├── modify_video.py         <--- Skrip Python utama
-├── requirements.txt        <--- Daftar dependensi modul Python (jika menggunakan skrip .py)
+├── TiktokPatcher.exe       <--- Aplikasi utama siap pakai
 └── README.md               <--- Panduan penggunaan
 ```
 
@@ -33,43 +42,21 @@ tiktok-video-modifier/
 
 ## 💻 Panduan Penggunaan
 
-Terdapat dua cara untuk menjalankan aplikasi ini:
+Aplikasi ini sangat mudah digunakan dan siap pakai tanpa memerlukan software tambahan apa pun di komputer Anda.
 
----
-
-### Cara 1: Menggunakan Aplikasi Siap Pakai (`TiktokPatcher.exe`) — Direkomendasikan
-*Metode ini tidak memerlukan instalasi Python atau software tambahan apa pun di komputer Anda.*
-
-1. Pastikan folder **`input`** dan **`output`** berada di sebelah file **`TiktokPatcher.exe`**.
+### 1. Mode Interaktif (Klik Ganda)
+1. Ekstrak file **`TiktokPatcher-v1.0.0-Windows.zip`**.
 2. Masukkan file video Anda (`.mp4`, `.mov`, dll.) ke dalam folder **`input`**.
 3. Klik 2× file **`TiktokPatcher.exe`** (atau jalankan via terminal/PowerShell).
-4. Menu interaktif akan muncul. Pilih nomor video yang ingin diproses, atau tekan **`A`** untuk memproses semua video sekaligus.
-5. Selesai! File hasil modifikasi langsung tersedia di folder **`output`**.
-
----
-
-### Cara 2: Menggunakan Skrip Python (`modify_video.py`)
-
-#### 1. Persyaratan & Instalasi Dependensi
-Pastikan komputer Anda telah terinstal **Python 3.10+**. Jalankan perintah berikut di terminal:
-
-```powershell
-pip install -r requirements.txt
-```
-
-#### 2. Menjalankan Menu Interaktif
-1. Masukkan video ke dalam folder `input/`.
-2. Jalankan perintah:
-   ```powershell
-   python modify_video.py
-   ```
-3. Pilih nomor video yang ingin dimodifikasi dari daftar menu yang tampil:
+4. Menu interaktif akan muncul menampilkan daftar video yang ada di folder `input`:
    ```text
    ====================================================================
        TIKTOK ANTI-DETECTION TOOL - EXACT TIKQUICK ENGINE v19
    ====================================================================
-   Folder Input  : C:\Users\...\input
-   Folder Output : C:\Users\...\output
+   Status Lisensi: AKTIF (Berlaku s/d 17-09-2026 23:59:59)
+   Sisa Waktu    : 7 hari 16 jam tersisa
+   Folder Input  : C:\...\input
+   Folder Output : C:\...\output
    --------------------------------------------------------------------
    Ditemukan 2 video di folder 'input/':
 
@@ -80,22 +67,23 @@ pip install -r requirements.txt
      [R] Refresh daftar video
      [0] Keluar
    ====================================================================
-   Pilih nomor video yang ingin dimodifikasi (atau A/0): 1
+   Pilih nomor video yang ingin dimodifikasi (atau A/0): 
    ```
-4. Pilih mode:
-   - `[1] TIKQUICK (Default)`: Mode standar modifikasi kontainer.
-   - `[2] CLEAN`: Mode bersih tanpa teks watermark bot.
-5. Tekan Enter. File hasil akan langsung tersedia di folder `output/`.
+5. Pilih nomor video yang ingin diproses, atau ketik **`A`** untuk memproses seluruh video sekaligus.
+6. Pilih mode modifikasi:
+   - `[1] TIKQUICK (Default)`: Mode standar modifikasi kontainer TikQuick v19.
+   - `[2] CLEAN`: Mode struktur kontainer bersih (*ghost audio track*).
+7. Selesai! File hasil modifikasi langsung tersedia di folder **`output`**.
 
-#### 3. Menjalankan Otomatis / Batch Mode (Tanpa Dialog Menu)
-Untuk memproses seluruh video di folder `input/` secara otomatis tanpa membuka menu interaktif:
+### 2. Mode Otomatis / Batch CLI (Opsional)
+Bagi pengguna yang ingin menjalankan aplikasi via skrip otomatisasi atau command line tanpa dialog menu:
 
 ```powershell
-# Mode Default
-python modify_video.py --all --mode tikquick
+# Memproses semua video di folder input dengan mode TikQuick
+.\TiktokPatcher.exe --all --mode tikquick
 
-# Mode Clean
-python modify_video.py --all --mode clean
+# Memproses semua video di folder input dengan mode Clean
+.\TiktokPatcher.exe --all --mode clean
 ```
 
 ---
@@ -115,8 +103,7 @@ python modify_video.py --all --mode clean
 ## 💡 Tips Penggunaan untuk Konten TikTok
 
 1. **Resolusi Rekomendasi**: Gunakan resolusi 1080p (1080×1920) atau 4K (2160×3840) pada 60fps untuk ketajaman maksimal.
-2. **Audio Tambahan**: Disarankan menambahkan atau mengganti musik latar resmi dari aplikasi TikTok saat proses unggah untuk membantu distribusi video.
-3. **Akun & Koneksi**: Gunakan akun yang dalam status normal dan pastikan tidak terkena batasan harian upload.
+2. **Akun & Koneksi**: Gunakan akun yang dalam status normal dan pastikan tidak terkena batasan harian upload.
 
 ---
 
